@@ -51,6 +51,7 @@ if(Planet_Choice == 7):
 if(Planet_Choice == 8):
     gravity = 14.07
     print(str(Mass_Calc * gravity) + "N is the weight of the mass on Neptune")
-
-else:
-    print("The planet choice does not exist")
+    
+if(Planet_Choice < 1 or Planet_Choice > 8):
+    print("This planet does not exist")
+    
