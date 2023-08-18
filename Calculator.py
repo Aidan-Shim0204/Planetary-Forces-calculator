@@ -1,13 +1,24 @@
-import math 
-import numpy as np
-import matplotlib.pyplot as plt
+#Importing everything math related and physics
+import math #For math stuff 
+import numpy as np # More math
+import matplotlib.pyplot as plt # Sketching out diagrams and models for kinematics
+import pysketcher as ps # Drawing out Physics diagrams and FBD
 
+# Setting up values
 gravity = float
 Mass_Calc = float(input("Mass: "))
+energy = float
+
+
+
+
+
 print(str(Mass_Calc) +"kg")
 
 Planet_Choice = int(input("Choose a planet: 1. Mercury, 2. Venus, 3. Earth, 4. Mars, 5. Jupiter, 6. Saturn, 7. Uranus, 8. Neptune "))
 
+
+# Unfortunately have to brute force these calcs
 if(Planet_Choice == 1):
     gravity = 3.59
     print(str(Mass_Calc * gravity) + "N is the weight of the mass on Mercury")
