@@ -1,13 +1,4 @@
 import Calculator 
 import pysketcher as ps
+import matplotlib.pyplot as plt
 from pysketcher.backend.matplotlib import MatplotlibBackend
-
-figure = ps.Figure(0.0, 5.0, 0.0, 5.0, MatplotlibBackend)
-
-a = ps.Point(1.0, 3.0)
-b = ps.Point(4.0, 3.0)
-
-line = ps.Line(a, b)
-figure.add(line)
-figure.show()
-
