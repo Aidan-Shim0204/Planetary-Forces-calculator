@@ -4,16 +4,13 @@ import numpy as np # More math
 import matplotlib.pyplot as plt # Sketching out diagrams and models for kinematics
 import pysketcher as ps # Drawing out Physics diagrams and FBD
 
-# Setting up values
+# Setting up values and variables for energy, weight, and mass
 gravity = float
 Mass_Calc = float(input("Mass: "))
 energy = float
-
-
-
-
-
+height = float
 print(str(Mass_Calc) +"kg")
+
 
 Planet_Choice = int(input("Choose a planet: 1. Mercury, 2. Venus, 3. Earth, 4. Mars, 5. Jupiter, 6. Saturn, 7. Uranus, 8. Neptune "))
 
@@ -55,3 +52,19 @@ if(Planet_Choice == 8):
 if(Planet_Choice < 1 or Planet_Choice > 8):
     print("This planet does not exist")
     
+
+
+
+
+
+
+
+plt.title("Increasing Velocity on Planet")
+plt.xlabel("Time")
+plt.ylabel("Velocity")
+
+plt.plot(x, y)
+
+plt.grid()
+
+plt.show()
