@@ -97,7 +97,7 @@ fig = plt.figure(figsize = (12, 7))
 xpoints =  np.linspace(0, potential_energy, 100)
 ypoints = (2* xpoints / Mass_Calc)**0.5
 
-plt.plot(xpoints, ypoints, alpha = 0.4, label ='V = $\sqrt{PE/m}$',
+plt.plot(xpoints, ypoints, alpha = 0.4, label ='V = $\sqrt{PE/m}$', 
          color ='red', linestyle ='dashed',
          linewidth = 2)
 
