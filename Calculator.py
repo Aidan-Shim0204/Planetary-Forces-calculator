@@ -8,7 +8,6 @@ import pysketcher as ps # Drawing out Physics diagrams and FBD
 
 # Setting up values and variables for energy, weight, and mass
 gravity = float
-kinetic_energy = float(5)
 velocity = float
 height = float
 planet_name = str
@@ -90,6 +89,7 @@ def potenergyCalc(Mass_Calc, gravity, height):
 potenergyCalc(Mass_Calc, gravity, height)
 
 
+#FBD Diagram Creator for mass
 
 
 # Energy graphing simulator [KE , Velocity conversion graph] 
@@ -106,7 +106,7 @@ plt.xlabel("Potential Energy")
 plt.ylabel("Velocity")
 
 plt.grid(alpha =.6, linestyle ='--')
-fig.text(0.7, 0.15, 'Glaiven_Dev',
+fig.text(0.75, 0.15, 'Glaiven_Dev',
          fontsize = 12, color ='blue',
          ha ='left', va ='bottom',
          alpha = 0.5)
@@ -114,5 +114,6 @@ fig.text(0.7, 0.15, 'Glaiven_Dev',
 plt.legend()
  
 plt.show()
+
 
 
