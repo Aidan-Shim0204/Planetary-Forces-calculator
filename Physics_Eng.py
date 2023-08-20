@@ -8,7 +8,6 @@ def main():
 	while True: 
 		planet_physics_functions() 
 
-
 # Physics Option for Calculating Energy, Force, etc.
 def planet_physics_functions():
     # Setting up values and variables for energy, weight, and mass
@@ -31,7 +30,6 @@ def planet_physics_functions():
         planet_name = planets[Planet_Choice]
         gravity_value = gravity[Planet_Choice]
         weight_force = float(Mass_Calc * gravity_value)
-        
         print(str(weight_force) + "N is the weight of the mass on the planet " + planet_name)
         
     else:
@@ -46,26 +44,30 @@ def planet_physics_functions():
     
     potenergyCalc(Mass_Calc, gravity_value, height)
     
-    # Energy graphing simulator [KE , Velocity conversion graph] 
+    # Energy graphing simulator [KE , Velocity conversion graph]
+   
     fig = plt.figure(figsize = (12, 7))
     xpoints =  np.linspace(0, potential_energy, 10)
     ypoints = (2 * xpoints / Mass_Calc)**0.5
     plt.plot(xpoints, ypoints, alpha = 0.4, label ='V = $\sqrt{2PE/m}$', 
-         color ='red', linestyle ='dashed',
-         linewidth = 2)
+            color ='red', linestyle ='dashed',
+            linewidth = 2)
+ 
+        
     plt.title("Potential Energy to Velocity conversion rate on " + planet_name)
     plt.xlabel("Potential Energy")
     plt.ylabel("Velocity")
 
     plt.grid(alpha =.6, linestyle ='--')
     fig.text(0.70, 0.15, 'Glaiven_Dev',
-         fontsize = 12, color ='blue',
-         ha ='left', va ='bottom',
-         alpha = 0.5)
+        fontsize = 12, color ='blue',
+        ha ='left', va ='bottom',
+        alpha = 0.5)
  
     plt.legend()
     plt.show()
 
 # Iterates over the whole function
 if __name__ == '__main__': main() 
+
 
