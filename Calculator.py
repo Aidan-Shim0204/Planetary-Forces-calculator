@@ -8,13 +8,13 @@ from pysketcher import *
 def main(): 
 	while True: 
 		physics_functions() 
+        
   
   
 
 def physics_functions():
     # Setting up values and variables for energy, weight, and mass
     gravity = float
-    velocity = float
     height = float
     planet_name = str
     # Calculation Set Up for energy and mass
@@ -28,6 +28,8 @@ def physics_functions():
 
 
     # Calculations for planets and energy
+    
+    # Try a more efficient way - Perhaps store gravities in an array and have the planet choice just correspond to said Array and set the value as that. Have the planet choice be a single function 
     if(Planet_Choice == 1):
         gravity = 3.59
         weight_force = Mass_Calc * gravity
