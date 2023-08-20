@@ -15,9 +15,7 @@ def physics_functions():
     height = float
     planets = [0, "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
     # Calculation Set Up for energy and mass
-    Mass_Calc = float(input("Mass: "))
-
-    print(str(Mass_Calc) +"kg")
+    Mass_Calc = float(input("What Mass do you want to use in kg? : "))
 
     height = float(input("What height do you want to set your mass at in Meters? "))
 
