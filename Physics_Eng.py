@@ -4,14 +4,10 @@ import numpy as np # More math
 import matplotlib.pyplot as plt # Sketching out diagrams and models for kinematics
 from pysketcher import *
 
-
 def main(): 
 	while True: 
 		physics_functions() 
         
-  
-  
-
 def physics_functions():
     # Setting up values and variables for energy, weight, and mass
     gravity = [0.0, 3.59, 8.87, 9.81, 3.77, 25.95, 11.08, 10.67, 14.07]
@@ -45,16 +41,13 @@ def physics_functions():
         main()
 
 
-
-
     def potenergyCalc(Mass_Calc, gravity_value, height):
         global potential_energy
         potential_energy = Mass_Calc * gravity_value * height
         print(str(potential_energy) + " Joules is the potential-energy of the mass-gravitational height system")
-
+    
     potenergyCalc(Mass_Calc, gravity_value, height)
-
-
+    
     # Energy graphing simulator [KE , Velocity conversion graph] 
     fig = plt.figure(figsize = (12, 7))
     xpoints =  np.linspace(0, potential_energy, 10)
