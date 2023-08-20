@@ -8,6 +8,8 @@ from pysketcher import *
 def main(): 
 	while True: 
 		physics_functions() 
+  
+  
 
 def physics_functions():
     # Setting up values and variables for energy, weight, and mass
@@ -105,7 +107,7 @@ def physics_functions():
     plt.ylabel("Velocity")
 
     plt.grid(alpha =.6, linestyle ='--')
-    fig.text(0.75, 0.15, 'Glaiven_Dev',
+    fig.text(0.70, 0.15, 'Glaiven_Dev',
          fontsize = 12, color ='blue',
          ha ='left', va ='bottom',
          alpha = 0.5)
@@ -114,7 +116,9 @@ def physics_functions():
  
     plt.show()
 
+# Iterates over the whole function
 
 if __name__ == '__main__': main() 
+
 
 
