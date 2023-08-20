@@ -82,7 +82,8 @@ def physics_functions():
         planet_name = "Neptune"
     
     if(Planet_Choice < 1 or Planet_Choice > 8):
-        print("This planet does not exist")
+        print("This planet does not exist, please try again")
+        main()
 
 
     def potenergyCalc(Mass_Calc, gravity, height):
