@@ -1,13 +1,15 @@
-#Importing everything math related and physics
+#Importing everything math related and physics and for data
 import math #For math stuff 
 import numpy as np # More math
 import matplotlib.pyplot as plt # Sketching out diagrams and models for kinematics
 from pysketcher import *
+import pandas as pd
+import openpyxl
 
 def main(): 
 	while True: 
 		planet_physics_functions() 
-
+    
 # Physics Option for Calculating Energy, Force, etc.
 def planet_physics_functions():
     # Setting up values and variables for energy, weight, and mass
@@ -36,37 +38,85 @@ def planet_physics_functions():
         print("This planet choice does not exist, try again")
         main()
 
-
+    # Setting up functions [For calculations]
+    
+    #Potential Energy Value Set Up
     def potenergyCalc(Mass_Calc, gravity_value, height):
         global potential_energy
         potential_energy = Mass_Calc * gravity_value * height
         print(str(potential_energy) + " Joules is the potential-energy of the mass-gravitational height system")
     
+    # Solving Kinematic Equations
+    def kinematicCalc(gravity_value, height):
+        global time
+        time = float(math.sqrt(2 * height / gravity_value))
+        return time 
+    
+    # Calculating the change in momentum 
+    def momentumCalc(Mass_Calc, height, gravity_value):
+        global momentum_value
+        momentum_value = float(Mass_Calc * height/kinematicCalc(gravity_value, height))
+        return momentum_value
+
+            
+        
     potenergyCalc(Mass_Calc, gravity_value, height)
     
     # Energy graphing simulator [KE , Velocity conversion graph]
-   
-    fig = plt.figure(figsize = (12, 7))
-    xpoints =  np.linspace(0, potential_energy, 10)
-    ypoints = (2 * xpoints / Mass_Calc)**0.5
-    plt.plot(xpoints, ypoints, alpha = 0.4, label ='V = $\sqrt{2PE/m}$', 
+    def energyGraph():     
+        fig = plt.figure(figsize = (12, 7))
+        xpoints =  np.linspace(0, potential_energy, 10)
+        ypoints = (2 * xpoints / Mass_Calc)**0.5
+        plt.plot(xpoints, ypoints, alpha = 0.4, label ='V = $\sqrt{2PE/m}$', 
             color ='red', linestyle ='dashed',
             linewidth = 2)
  
         
-    plt.title("Potential Energy to Velocity conversion rate on " + planet_name)
-    plt.xlabel("Potential Energy")
-    plt.ylabel("Velocity")
+        plt.title("Potential Energy to Velocity conversion rate on " + planet_name)
+        plt.xlabel("Potential Energy")
+        plt.ylabel("Velocity")
 
-    plt.grid(alpha =.6, linestyle ='--')
-    fig.text(0.70, 0.15, 'Glaiven_Dev',
-        fontsize = 12, color ='blue',
-        ha ='left', va ='bottom',
-        alpha = 0.5)
+        plt.grid(alpha =.6, linestyle ='--')
+        fig.text(0.70, 0.15, 'Glaiven_Dev',
+            fontsize = 12, color ='blue',
+            ha ='left', va ='bottom',
+            alpha = 0.5)
  
-    plt.legend()
-    plt.show()
+        plt.legend()
+        plt.show()
+    
+    # Momentum graphing simulator [Time to Momentum change for a planet - AKA Force - Also include Riemann Sums]    
+    def momentumGraph():
+        fig = plt.figure(figsize = (12, 7))
+        xpoints =  np.linspace(0, kinematicCalc(gravity_value, height), 10)
+        ypoints = Mass_Calc * gravity_value * xpoints
+        
+        
+        plt.plot(xpoints, ypoints, alpha = 0.4, label ='P = mv/t', 
+            color ='green', linestyle ='dashed',
+            linewidth = 2)
+ 
+        
+        plt.title("Change in Momentum over Time on Planet " + planet_name)
+        plt.xlabel("Time (Seconds)")
+        plt.ylabel("Momentum")
 
+        plt.grid(alpha =.6, linestyle ='--')
+        fig.text(0.8, 0.05, 'Glaiven_Dev',
+            fontsize = 12, color ='blue',
+            ha ='left', va ='bottom',
+            alpha = 0.5)
+ 
+        plt.legend()
+        plt.show()      
+        
+    momentumGraph()
+    energyGraph()
+    
+# Mapping data on an excel sheet
+def data_store():
+    Inst_PE = int
+    
 # Iterates over the whole function
 if __name__ == '__main__': main() 
 
