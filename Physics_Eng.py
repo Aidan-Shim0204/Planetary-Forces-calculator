@@ -51,14 +51,6 @@ def planet_physics_functions():
         time = float(math.sqrt(2 * height / gravity_value))
         return time 
     
-    # Calculating the change in momentum 
-    def momentumCalc(Mass_Calc, height, gravity_value):
-        global momentum_value
-        momentum_value = float(Mass_Calc * height/kinematicCalc(gravity_value, height))
-        return momentum_value
-
-            
-        
     potenergyCalc(Mass_Calc, gravity_value, height)
     
     # Energy graphing simulator [KE , Velocity conversion graph]
