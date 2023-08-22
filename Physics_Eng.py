@@ -13,10 +13,9 @@ def main():
 # Physics Option for Calculating Energy, Force, etc.
 def planet_physics_functions():
     # Setting up values and variables for energy, weight, and mass
-    gravity = [0.0, 3.59, 8.87, 9.81, 3.77, 25.95, 11.08, 10.67, 14.07]
-    
+    gravity = [3.59, 8.87, 9.81, 3.77, 25.95, 11.08, 10.67, 14.07]
     height = float
-    planets = [0, "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
     # Calculation Set Up for energy and mass
     Mass_Calc = float(input("What Mass do you want to use in kg? : "))
 
@@ -29,8 +28,8 @@ def planet_physics_functions():
         global gravity_value 
         global planet_name
         
-        planet_name = planets[Planet_Choice]
-        gravity_value = gravity[Planet_Choice]
+        planet_name = planets[Planet_Choice - 1]
+        gravity_value = gravity[Planet_Choice - 1]
         weight_force = float(Mass_Calc * gravity_value)
         print(str(weight_force) + "N is the weight of the mass on the planet " + planet_name)
         
@@ -95,7 +94,6 @@ def planet_physics_functions():
         plt.plot(xpoints, ypoints, alpha = 0.4, label ='P = mv/t', 
             color ='green', linestyle ='dashed',
             linewidth = 2)
- 
         
         plt.title("Change in Momentum over Time on Planet " + planet_name)
         plt.xlabel("Time (Seconds)")
