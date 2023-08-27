@@ -50,6 +50,7 @@ def planet_physics_functions():
         global time
         time = float(math.sqrt(2 * height / gravity_value))
         return time 
+
     
     potenergyCalc(Mass_Calc, gravity_value, height)
     
@@ -82,7 +83,6 @@ def planet_physics_functions():
         xpoints =  np.linspace(0, kinematicCalc(gravity_value, height), 10)
         ypoints = Mass_Calc * gravity_value * xpoints
         
-        
         plt.plot(xpoints, ypoints, alpha = 0.4, label ='P = mv/t', 
             color ='green', linestyle ='dashed',
             linewidth = 2)
@@ -90,7 +90,8 @@ def planet_physics_functions():
         plt.title("Change in Momentum over Time on Planet " + planet_name)
         plt.xlabel("Time (Seconds)")
         plt.ylabel("Momentum")
-
+        
+        
         plt.grid(alpha =.6, linestyle ='--')
         fig.text(0.8, 0.05, 'Glaiven_Dev',
             fontsize = 12, color ='blue',
@@ -103,7 +104,7 @@ def planet_physics_functions():
     momentumGraph()
     energyGraph()
     
-# Mapping data on an excel sheet
+# Mapping data on an excel sheet -> Later
 def data_store():
     Inst_PE = int
     
