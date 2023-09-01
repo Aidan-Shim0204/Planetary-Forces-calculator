@@ -14,6 +14,14 @@ def main():
 def planet_physics_functions():
     # Setting up values and variables for energy, weight, and mass
     gravity = [3.59, 8.87, 9.81, 3.77, 25.95, 11.08, 10.67, 14.07]
+    
+    planet_mass = []
+    planet_radius =[]
+    G_const = 6.6743E-11
+    
+    
+    
+    
     height = float
     planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
     # Calculation Set Up for energy and mass
